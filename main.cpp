@@ -1,16 +1,17 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
-// setprecision(int n)
+
 using std::cout;
 using std::cin;
 using std::setprecision;
 using std::string;
 using std::endl;
+using std::fixed;
 
 double credit{};
 int nickels{}, dimes{}, quarters{}, pennies{};
-int twix{ 0 }, skittles{ 5 }, crunch{ 5 }, milky_way{ 5 }, reese{ 5 };
+int twix{ 5 }, skittles{ 5 }, crunch{ 5 }, milky_way{ 5 }, reese{ 5 };
 const double twix_cost{ 1.50 }, crunch_cost{ 1.50 };
 const double skittles_cost{ 1.25 }, milky_cost{ 1.25 };
 const double reese_cost{ 1.75 };
@@ -24,10 +25,9 @@ void change_return();
 
 void display_menu()
 {
-    setprecision(2);
     int selection{};
     while(selection != 6) {
-        cout << "Credit: $" << credit << "\n" << endl;
+        cout << "Credit: $" << credit << fixed << setprecision(2) << "\n" << endl;
         cout << "0 - Insert Credit" << endl;
         cout << "1 - Twix ($1.50)" << endl;
         cout << "2 - Skittles ($1.25)" << endl;
@@ -118,10 +118,9 @@ void vend(double cost)
 }
 void insert_money()
 {
-    setprecision(2);
     int coin_select{};
     while(coin_select != 5) {
-        cout << "\nCredit: $" << credit << "\n" << endl;
+        cout << "\nCredit: $" << credit << fixed <<  setprecision(2) << "\n" << endl;
         cout << "0 - Dollar" << endl;
         cout << "1 - Quarter" << endl;
         cout << "2 - Dime" << endl;
